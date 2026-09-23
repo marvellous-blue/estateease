@@ -52,16 +52,18 @@ const signUp = () => {
     isLoading(true);
 
     try {
-      if (useRedirectFlow) {
-        await signInWithRedirect(auth, googleprovider);
-      } else {
+      
         const result = await signInWithPopup(auth, googleprovider);
-        if (result?.user) {
-          router.push("/dashboard");
+        if (result.user) {
+          console.log(result.user.email)
+
+          await auth.currentUser?.getIdToken
+
+          router.replace("/dashboard");
         }
-        isLoading(false)
-      }
-    } catch (err: unknown) {
+        
+    }
+    catch (err: unknown) {
       const message = err instanceof Error ? err.message : "unable to connect with google";
       setError(message);
       isLoading(false);

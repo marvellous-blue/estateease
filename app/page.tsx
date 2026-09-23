@@ -25,6 +25,9 @@ const page = () => {
         <Link href="/login" className="text-[#EE7421] px-15 py-3 rounded-md bg-white mt-7 border border-[#EE7421]">Login</Link>
         <Link href="/create-account" className="text-white px-4 py-3 rounded-md bg-[#EE7421] mt-7 ml-4">Create Account</Link>
       </div>
+      <div > 
+        <Link href="/dashboard" className="px-15 bg-white py-3 border-amber-500 border-2 rounded-md text-3xl text-[#EE7421]">Dashboard</Link>  
+      </div>
     </div>
   )
 }
